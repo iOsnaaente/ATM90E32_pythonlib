@@ -18,8 +18,13 @@ import math
 import time 
 import busio
 
-spi_bus = busio.SPI( clock = SCK, MISO = MISO, MOSI = MOSI )
-cs      = digitalio.DigitalInOut( CS_PIN )
+CS   = 8
+MISO = 9
+MOSI = 10
+SCLK = 11
+
+spi_bus = busio.SPI( clock = SCLK, MISO = MISO, MOSI = MOSI )
+cs      = digitalio.DigitalInOut( CS )
 
 class ATM90E32:
 
